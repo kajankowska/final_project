@@ -2,26 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Menu dopasowane do Twoich potrzeb</title>
+    <title>Menu tailored to your needs</title>
 </head>
 <body style="color: navy; background: #f9faff">
 <div class="container">
   <div class="columns">
       <div class="column col-1">
-          <div style="margin: 30px, color: navy, background: #f5f6ff">
+          <div style="margin: 30px, color: navy">
             <p></p>
               </div>
       </div>
         <div class="column col-11">
 <header class="navbar">
   <section class="navbar-section">
-    <a href="#" class="btn btn-link">Historia projektu</a>
+    <a href="#" class="btn btn-link">Project history</a>
   </section>
   <section class="navbar-center">
       <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
   </section>
   <section class="navbar-section">
-    <a href="#" class="btn btn-link">Współpraca</a>
+    <a href="#" class="btn btn-link">Collaboration</a>
   </section>
 </header>
 <!DOCTYPE html>
@@ -29,17 +29,20 @@
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 <div class="main-style text-center ">
-    <div style="margin: 10px; color: navy; background: #f5f6ff">
-    <h1><font face = "Yu Gothic">Wprowadź dane i dostosuj posiłki do swojego pobytu</font></h1>
+    <div style="margin: 10px; color: navy">
+    <h1><font face = "Yu Gothic">Put the data and customize meals for your stay</font></h1>
         <div class="form-group"></div>
-        <h5>Prosty i szybki proces pozwoli poznać Ci menu na najbliższy dzień
-            Możesz wybrać dogodne pory dostarczenia posiłków do sali
-            Dodatkowe fukncjonalności zapewnią żywienie dopasowane do Ciebie</h5>
+        <h5><p>A simple and quick process will allow you to know the menu for the next day
+            <p>You can select convenient times for meal delivery to your room
+            <p>Additional options provide nutrition tailored to you</h5>
             <p></p>
-            <div><button class="btn btn-link">Rozpocznij</button></div></div>
+            <div>
+            <a href={{url_for("form")}}><button type = "btn btn-primary">Start</button></a>
     </div>
     </div>
       </div>
+</div>
+  </div>
 </div>
 </body>
 </html>
