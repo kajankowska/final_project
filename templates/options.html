@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Formularz</title>
+    <title>Formu</title>
 </head>
 <body style="color: navy; background: #f9faff">
 <div class="columns">
       <div class="column col-1">
-          <div style="margin: 30px, color: navy, background: #f5f6ff">
+          <div style="margin: 30px, color: navy">
             <p></p>
               </div>
       </div>
         <div class="column col-11">
 <header class="navbar">
   <section class="navbar-section">
-    <a href="#" class="btn btn-link">Historia projektu</a>
+    <a href="#" class="btn btn-link">Project history</a>
   </section>
   <section class="navbar-center">
       <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
   </section>
   <section class="navbar-section">
-    <a href="#" class="btn btn-link">Współpraca</a>
+    <a href="#" class="btn btn-link">Collaboration</a>
   </section>
 </header>
 <!DOCTYPE html>
@@ -28,33 +28,46 @@
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 <div class="main-style">
-    <div style="margin: 10px; color: navy; background: #f5f6ff">
-<!--    <h5><font face = "Yu Gothic">1. Jaki rodzaj diety preferujesz?</font></h5>-->
-<!--        <div class="form-group"></div>-->
-<!--    <div class="main-style">-->
-        <div><label class="form-label">1. Jaki rodzaj diety preferujesz?</label>
+    <div style="margin: 10px; color: navy">
+        <div><label class="form-label">1. What kind of diet you prefer?</label>
             <select>
-            <option>wybierz opcję</option>
-                <option id="1">standard</option>
-                <option id="2">wegańska</option>
-                <option id="3">wegetariańska</option>
-                <option id="4">bez glutenu</option>
-                <option id="5">bez laktozy</option>
+            <option>choose option</option>
+                <option id="4">glutenfree</option>
                 <option id="6">FODMAP</option>
+                <option id="5">lactosefree</option>
+                <option id="1">standard</option>
+                <option id="2">vegan</option>
+                <option id="3">vegetarian</option>
             </select></div>
         </div>
-        <div style="margin: 10px; color: navy; background: #f5f6ff">
-        <div><label class="form-label">2. Wprowadź swoje dzienne zapotrzebowanie kaloryczne</label>
-            <input class="form-input" type="text" id="input-example-1" placeholder="np. 2200">kcal
+        <div style="margin: 10px; color: navy">
+        <div><label class="form-label">2. Put your daily caloric needs</label>
+            <input class="form-input" type="text" id="input-example-1" placeholder="e.g. 2200">kcal
         </div>
-        <div><label class="form-label">3. Czy chcesz wyłączyć z diety jakieś produkty?</label>
-            <input class="form-input" type="text" id="input-example-2" placeholder="np. hummus, jalapeno">
+        <div><label class="form-label">3. Do you want to exclude any products from your diet?</label>
+            <input class="form-input" type="text" id="input-example-2" placeholder="e.g. hummus, jalapeno">
         </div>
                 <p></p>
-                <button class="btn btn-primary">Poprzedni krok</button>
-                <button class="btn btn-primary">Następny krok</button></div>
+        <div class="form-group">
+            <label class="form-label">4. Mark how many meals per day you eat</label>
+            <label class="form-radio">
+            <input type="radio" name="ilosc" checked>
+            <i class="form-icon"></i> 1
+            </label>
+            <label class="form-radio">
+            <input type="radio" name="ilosc">
+            <i class="form-icon"></i> 2
+            </label>
+            <label class="form-radio">
+            <input type="radio" name="ilosc">
+            <i class="form-icon"></i> 3
+            </label>
+        </div>
                 <p></p>
-            <p>Postęp:</p>
+                <a href={{url_for("form")}}><button class="btn btn-primary">Previous step</button></a>
+                <a href={{url_for("processing")}}><button class="btn btn-primary">Next step</button></a>
+                <p></p>
+            <p>Progress:</p>
             <progress class="progress" value="50" max="100"></progress>
             <p></p>
             </div>
