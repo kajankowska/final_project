@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
@@ -14,13 +14,16 @@ def form():
     return render_template('register.html')
 
 
-@app.route('/options/')
+@app.route('/options/', methods=["POST", "GET"])
 def fill():
+    if request.method == "POST":
+        print(dict(request.form))
     return render_template('options.html')
 
 
-@app.route('/generator/')
+@app.route('/generator/', methods=["POST", "GET"])
 def processing():
+    print(dict(request.form))
     return render_template('plan_generator.html')
 
 
