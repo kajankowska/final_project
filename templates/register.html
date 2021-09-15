@@ -16,30 +16,34 @@
   <section class="navbar-section">
     <a href="#" class="btn btn-link">Project history</a>
   </section>
+
   <section class="navbar-center">
       <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
   </section>
   <section class="navbar-section">
-    <a href="#" class="btn btn-link">Collaboration</a>
+    <a href={{url_for("fill")}} class="btn btn-link">Home page</a>
   </section>
 </header>
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
-<div class="main-style">
     <div style="margin: 10px; color: navy">
-    <h3><font face = "Yu Gothic">Registration in our system will enable efficient use of the platform</font></h3>
+    <h3><font face = "Yu Gothic"> Registration in our system will enable efficient use of the platform</font></h3>
+        <div class="column col-lg-auto col-5">
         <div class="form-group"></div>
             <h5>Fill in the following data</h5>
             <p></p>
+            <form action={{url_for("fill")}} method="POST">
             <label class="form-label" for="input-example-1">What's your name (login)</label>
             <input class="form-input" type="text" id="input-example-1" placeholder="name and surname">
+            <p></p>
             <label class="form-label" for="input-example-2">Put your patient number (password)</label>
             <input class="form-input" type="text" id="input-example-2" placeholder="patient no."></div>
+        <p></p>
     <div class="main-style">
         <div style="margin: 10px; color: navy">
-        <label class="form-label">Which ward you are in</label>
+        <label class="form-label">Which ward you are in?</label>
             <select>
             <option>choose option</option>
                 <option id="1">Department of Cardiac Surgery</option>
@@ -55,24 +59,27 @@
                 <option id="11">Department of Otolaryngology</option>
                 <option id="12">Department of Rheumatology</option>
             </select></div>
+        <p></p>
         </div>
         </div>
         <div class="form-group">
-            <div style="margin: 10px; color: navy">
+            <div style="margin: 20px; color: navy">
             <label class="form-label">Select the color of the hospital wing in which your room is located</label>
             <select>
                 <option>choose option</option>
-                <option id="13">Red</option>
-                <option id="14">Green</option>
-                <option id="15">Blue</option>
-                <option id="16">Yellow</option>
+                <option id="13">Red Wing</option>
+                <option id="14">Green Wing</option>
+                <option id="15">Blue Wing</option>
+                <option id="16">Yellow Wing</option>
                 </select>
+                <p></p>
             <div>
                 <div style="color: navy">
                 <p></p>
                 <a href={{url_for("regend")}}><button class="btn btn-primary">Register</button></a>
-                <a href={{url_for("fill")}}><button class="btn btn-primary">Next step</button></a>
+                <button type="submit" class="btn btn-primary">Next step</button>
                 <p></p>
+            </form>
             <p>Progress:</p>
             <progress class="progress" value="25" max="100"></progress>
             <p></p>
