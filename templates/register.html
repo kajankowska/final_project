@@ -4,89 +4,79 @@
     <meta charset="UTF-8">
     <title>Registration</title>
 </head>
-<body style="color: navy; background: #f9faff">
-<div class="columns">
-      <div class="column col-1">
-          <div style="margin: 30px, color: navy, background: #f5f6ff">
-            <p></p>
-              </div>
-      </div>
-        <div class="column col-11">
-<header class="navbar">
-  <section class="navbar-section">
-    <a href="#" class="btn btn-link">Project history</a>
-  </section>
-
-  <section class="navbar-center">
-      <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
-  </section>
-  <section class="navbar-section">
-    <a href={{url_for("fill")}} class="btn btn-link">Home page</a>
-  </section>
-</header>
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
-    <div style="margin: 10px; color: navy">
-    <h3><font face = "Yu Gothic"> Registration in our system will enable efficient use of the platform</font></h3>
-        <div class="column col-lg-auto col-5">
-        <div class="form-group"></div>
-            <h5>Fill in the following data</h5>
-            <p></p>
-            <form action={{url_for("fill")}} method="POST">
-            <label class="form-label" for="input-example-1">What's your name (login)</label>
-            <input class="form-input" type="text" id="input-example-1" placeholder="name and surname">
-            <p></p>
-            <label class="form-label" for="input-example-2">Put your patient number (password)</label>
-            <input class="form-input" type="text" id="input-example-2" placeholder="patient no."></div>
-        <p></p>
-    <div class="main-style">
-        <div style="margin: 10px; color: navy">
-        <label class="form-label">Which ward you are in?</label>
-            <select>
-            <option>choose option</option>
-                <option id="1">Department of Cardiac Surgery</option>
-                <option id="2">Department of Internal Medicine</option>
-                <option id="3">Department of Isotope Therapy</option>
-                <option id="4">Department of Neurological Rehabilitation</option>
-                <option id="5">Department of Neurology</option>
-                <option id="6">Department of Neurosurgery</option>
-                <option id="7">Department of Oncology and Hematology</option>
-                <option id="8">Department of Ophthalmology</option>
-                <option id="9">Department of Orthopaedics</option>
-                <option id="10">Department of Obstetrics</option>
-                <option id="11">Department of Otolaryngology</option>
-                <option id="12">Department of Rheumatology</option>
-            </select></div>
-        <p></p>
-        </div>
-        </div>
-        <div class="form-group">
-            <div style="margin: 20px; color: navy">
-            <label class="form-label">Select the color of the hospital wing in which your room is located</label>
-            <select>
-                <option>choose option</option>
-                <option id="13">Red Wing</option>
-                <option id="14">Green Wing</option>
-                <option id="15">Blue Wing</option>
-                <option id="16">Yellow Wing</option>
-                </select>
-                <p></p>
-            <div>
-                <div style="color: navy">
-                <p></p>
-                <a href={{url_for("regend")}}><button class="btn btn-primary">Register</button></a>
-                <button type="submit" class="btn btn-primary">Next step</button>
-                <p></p>
-            </form>
+<body style="margin: 20px, color: navy; background: #f9faff">
+<div class="columns">
+      <div class="column col-1">
+      </div>
+      <div class="column col-11">
+          <header class="navbar">
+              <section class="navbar-section">
+                <a href="#" class="btn btn-link">Project history</a>
+              </section>
+              <section class="navbar-center">
+                  <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
+              </section>
+              <section class="navbar-section">
+                  <a href={{url_for("home")}} class="btn btn-link">Home page</a>
+              </section>
+          </header>
+      <div>
+          <h3 style="margin: 5px"><font face = "Yu Gothic"> Registration in our system will enable efficient use of the platform</font></h3>
+          <div class="column col-lg-auto col-5">
+              <div class="form-group"></div>
+              <p></p>
+                  <h5>Fill in the following data</h5>
+              <p></p>
+          <form action="/endofreg/" method="POST">
+              <label class="form-label" for="input-example-1">What's your name (login)</label>
+                  <input name="login" class="form-input" type="text" id="input-example-1" placeholder="name and surname">
+                  <p></p>
+              <label class="form-label" for="input-example-2">Put your 5-character patient number (password)</label>
+                  <input name="password" class="form-input" maxlength="5" type="text" id="input-example-2" placeholder="patient no.">
+                  <p></p>
+              <label class="form-label">Which ward you are in?</label>
+                  <select name="ward">
+                  <option>choose option</option>
+                  <option id="1">Department of Cardiac Surgery</option>
+                  <option id="2">Department of Internal Medicine</option>
+                  <option id="3">Department of Isotope Therapy</option>
+                  <option id="4">Department of Neurological Rehabilitation</option>
+                  <option id="5">Department of Neurology</option>
+                  <option id="6">Department of Neurosurgery</option>
+                  <option id="7">Department of Oncology and Hematology</option>
+                  <option id="8">Department of Ophthalmology</option>
+                  <option id="9">Department of Orthopaedics</option>
+                  <option id="10">Department of Obstetrics</option>
+                  <option id="11">Department of Otolaryngology</option>
+                  <option id="12">Department of Rheumatology</option>
+                  </select>
+                  <p></p>
+              <label class="form-label">Select the color of the hospital wing in which your room is located</label>
+              <select name="wing">
+                  <option>choose option</option>
+                  <option id="13">Red Wing</option>
+                  <option id="14">Green Wing</option>
+                  <option id="15">Blue Wing</option>
+                  <option id="16">Yellow Wing</option>
+              </select>
+                  <p></p>
+              <div>
+                  <p></p>
+                  <button type="submit" class="btn btn-primary">Register</button>
+                  <p></p>
+              </div>
+          </form>
+      </div>
+          <div style="margin: 10px">
             <p>Progress:</p>
             <progress class="progress" value="25" max="100"></progress>
             <p></p>
-                </div>
-            </div>
+          </div>
 </div>
-        </div>
 </div>
 </div>
 </body>
