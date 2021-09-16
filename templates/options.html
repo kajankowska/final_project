@@ -4,35 +4,31 @@
     <meta charset="UTF-8">
     <title>Form</title>
 </head>
-<body style="color: navy; background: #f9faff">
-<div class="columns">
-      <div class="column col-1">
-          <div style="margin: 30px, color: navy">
-            <p></p>
-              </div>
-      </div>
-        <div class="column col-11">
-<header class="navbar">
-  <section class="navbar-section">
-    <a href="#" class="btn btn-link">Project history</a>
-  </section>
-  <section class="navbar-center">
-      <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
-  </section>
-  <section class="navbar-section">
-    <a href={{url_for("home")}} class="btn btn-link">Home page</a>
-  </section>
-</header>
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+<body style="color: navy; background: #f9faff">
+<div class="columns">
+      <div class="column col-1">
+      </div>
+      <div class="column col-11">
+          <header class="navbar">
+              <section class="navbar-section">
+                  <a href="#" class="btn btn-link">Project history</a>
+              </section>
+              <section class="navbar-center">
+                  <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
+              </section>
+              <section class="navbar-section">
+                  <a href={{url_for("home")}} class="btn btn-link">Home page</a>
+              </section>
+          </header>
 <div class="container">
   <div class="columns">
     <div class="column col-lg-auto col-5">
     <div class="column">
         <form action="/generator/" method="POST">
-            <div style="margin: 10px; color: navy">
         <label class="form-label">1. What kind of diet you prefer?</label>
             <select name="diet type">
             <option>choose option</option>
@@ -42,72 +38,61 @@
                 <option id="4">standard</option>
                 <option id="5">vegan</option>
                 <option id="6">vegetarian</option>
-                <p></p>
             </select>
-    </div>
-    <p></p>
+            <p></p>
         <div style="margin: 10px; color: navy">
         <div><label class="form-label">2. Put your daily caloric needs</label>
-            <input name="calories" class="form-input" type="text" id="input-example-1" placeholder="e.g. 2200">kcal
-            <p></p>
+                <input name="calories" class="form-input" type="text" id="input-example-1" placeholder="e.g. 2200">kcal
+             <p></p>
         </div>
         <div><label class="form-label">3. Do you want to exclude any products from your diet?</label>
-            <input name ="excl" class="form-input" type="text" id="input-example-2" placeholder="e.g. hummus, jalapeno">
+                <input name ="exc" class="form-input" type="text" id="input-example-2" placeholder="e.g. hummus, jalapeno">
         </div>
-                <p></p>
+             <p></p>
         <div class="form-group">
-            <label class="form-label">4. Mark how many meals per day you eat</label>
-            <label class="form-radio">
-            <input type="radio" name="ilosc" checked>
-            <i class="form-icon"></i> 1
-            </label>
-            <label class="form-radio">
-            <input type="radio" name="ilosc">
-            <i class="form-icon"></i> 2
-            </label>
-            <label class="form-radio">
-            <input type="radio" name="ilosc">
-            <i class="form-icon"></i> 3
-            </label>
-        </div>
+             <label class="form-label">4. Mark how many meals per day you eat</label>
+             <select name="meals_nr">
+             <option>choose option</option>
+                <option id="7">1</option>
+                <option id="8">2</option>
+                <option id="9">3</option>
+             </select>
+             <p></p>
         <div class="form-group">
-            <p></p>
-            <label class="form-label">5. Do you need cutlery?</label>
-            <label class="form-radio">
-            <input type="radio" name="ilosc" checked>
-            <i class="form-icon"></i> yes
-            </label>
-            <label class="form-radio">
-            <input type="radio" name="ilosc">
-            <i class="form-icon"></i> no
-            </label>
+             <label class="form-label">5. Do you need cutlery?</label>
+             <select name="cutlery">
+             <option>choose option</option>
+                <option id="10">yes</option>
+                <option id="11">no</option>
+             </select>
+             <p></p>
         </div>
-            <p></p>
-        <div style="color: navy">
         <div><label class="form-label">6. What kind of beverage provide with meals?</label>
             <select name="beverage">
                 <option>choose option</option>
-                <option id="7">brewed herbs</option>
-                <option id="8">carrot juice</option>
-                <option id="9">kombucha</option>
-                <option id="10">orange juice</option>
-                <option id="11">water</option>
-                <option id="12">none</option>
-                <p></p>
-            </select></div>
+                <option id="12">brewed herbs</option>
+                <option id="13">carrot juice</option>
+                <option id="14">kombucha</option>
+                <option id="15">orange juice</option>
+                <option id="16">water</option>
+                <option id="17">none</option>
+            </select>
+            <p></p>
+            <p></p>
+                <button type="submit" class="btn btn-primary">Next step</button>
+            <p></p>
         </div>
-            </form>
-
-                <p></p>
-                <a href={{url_for("form")}}><button class="btn btn-primary">Previous step</button></a>
-                <a href={{url_for("processing")}}><button class="btn btn-primary">Next step</button></a>
-                <p></p>
+        </div>
+        </div>
+        </form>
+        </div>
+    </div>
             <p>Progress:</p>
             <progress class="progress" value="50" max="100"></progress>
             <p></p>
-            </div>
 </div>
-        </div>
+</div>
+</div>
 </div>
 </body>
 </html>
