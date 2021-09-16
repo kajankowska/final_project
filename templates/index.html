@@ -10,7 +10,7 @@
       <div class="column col-1">
           <div style="margin: 30px, color: navy">
             <p></p>
-              </div>
+          </div>
       </div>
         <div class="column col-11">
 <header class="navbar">
@@ -21,7 +21,7 @@
       <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
   </section>
   <section class="navbar-section">
-    <a href="#" class="btn btn-link">Collaboration</a>
+    <a href={{url_for("home")}} class="btn btn-link">Home page</a>
   </section>
 </header>
 <!DOCTYPE html>
@@ -32,17 +32,19 @@
     <div style="margin: 10px; color: navy">
     <h1><font face = "Yu Gothic">Put the data and customize meals for your stay</font></h1>
         <div class="form-group"></div>
-        <h5><p>A simple and quick process will allow you to know the menu for the next day
-            <p>You can select convenient times for meal delivery to your room
-            <p>Additional options provide nutrition tailored to you</h5>
+        <h5>
+            <p>A simple and quick process will allow you to know the menu for the next day</p>
+            <p>You can select convenient times for meal delivery to your room</p>
+            <p>Additional options provide nutrition tailored to you</p>
             <p></p>
+        </h5>
             <div>
             <a href={{url_for("form")}}><button type = "btn btn-primary">Start</button></a>
+            </div>
     </div>
-    </div>
-      </div>
 </div>
-  </div>
+</div>
+</div>
 </div>
 </body>
 </html>
