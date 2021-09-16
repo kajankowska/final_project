@@ -4,44 +4,45 @@
     <meta charset="UTF-8">
     <title>Coming soon :)</title>
 </head>
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 <body style="color: navy; background: #f9faff">
 <div class="container">
   <div class="columns">
       <div class="column col-1">
           <div style="margin: 30px, color: navy">
-            <p></p>
-              </div>
+              <p></p>
+          </div>
       </div>
-        <div class="column col-11">
-<header class="navbar">
-  <section class="navbar-section">
-    <a href="#" class="btn btn-link">Project history</a>
-  </section>
-  <section class="navbar-center">
-      <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
-  </section>
-  <section class="navbar-section">
-    <a href="#" class="btn btn-link">Collaboration</a>
-  </section>
-</header>
-<!DOCTYPE html>
-<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
-<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
-<div class="main-style text-center">
-    <div style="margin: 10px; color: navy">
-    <h5><font face = "Yu Gothic">Data processing</font></h5>
-        <p></p>
-        <img src="https://co-slychac.pl/images/loading.gif" width="200" height="200">
-        <p></p>
-        <a href={{url_for("fill")}}><button class="btn btn-primary">Previous step</button></a>
-        <a href={{url_for("result")}}><button class="btn btn-primary">Generate plan</button></a>
-        <p></p>
-        <p>Progress:</p><progress class="progress" value="75" max="100"></progress>
-            <p></p>
-</div>
-    </div>
-    </div>
+      <div class="column col-11">
+          <header class="navbar">
+              <section class="navbar-section">
+                  <a href="#" class="btn btn-link">Project history</a>
+              </section>
+              <section class="navbar-center">
+                  <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
+              </section>
+              <section class="navbar-section">
+                  <a href={{url_for("home")}} class="btn btn-link">Home page</a>
+              </section>
+          </header>
+          <div class="main-style text-center">
+              <div style="margin: 10px; color: navy">
+                  <h5><font face = "Yu Gothic">Data processing</font></h5>
+                  <p></p>
+                  <img src="https://co-slychac.pl/images/loading.gif" width="200" height="200">
+                  <p></p>
+                  <a href={{url_for("fill")}}><button class="btn btn-primary">Previous step</button></a>
+                  <a href={{url_for("result")}}><button class="btn btn-primary">Generate plan</button></a>
+                  <p></p>
+                  <p>Progress:</p>
+                  <progress class="progress" value="75" max="100"></progress>
+                  <p></p>
+              </div>
+          </div>
+      </div>
 </div>
 </div>
 </body>
