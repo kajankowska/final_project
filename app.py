@@ -24,7 +24,6 @@ def form():
 def regend():
     if request.method == "POST":
         mp.userdata = dict(request.form)
-        print(mp.userdata)
     return render_template('end_of_register.html')
 
 
@@ -46,7 +45,6 @@ def processing():
 
 @app.route('/mealplan/')
 def result():
-    print(mp.images)
     return render_template('meal_plan.html', mealplan=mp.meals, nutritions=mp.nutritions, images=mp.images)
 
 
