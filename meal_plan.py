@@ -8,7 +8,11 @@ class MealPlan:
         self.meals = {}
         self.nutritions = {}
         self.recipeid = []
+        self.images = {}
         self.imageid = []
+        self.userdata = {}
+        self.options = {}
+        self.selected = {}
 
     def apikey(self):
         with open("key.txt") as file:
@@ -60,18 +64,10 @@ class MealPlan:
                 .format(line)
             response = requests.request("GET", url, headers=headers)
             output = response.json()
-            return output
-
-            # self.nutritions[line] = output
-
-    def nutritions_save(self, output):
-        for line in output:
-            cal = line["calories"]
-            carb = line["carbs"]
-            fat = line["fat"]
-            protein = line["protein"]
-            nutri_list = [cal, carb, fat, protein]
-            self.nutritions[line] = nutri_list
+            self.nutritions[line] = {"calories": output["calories"],
+                                     "carbs": output["carbs"],
+                                     "fat": output["fat"],
+                                     "protein": output["protein"]}
 
     def get_images(self):
         self.imageid = list(self.meals)
@@ -85,17 +81,8 @@ class MealPlan:
             url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/{}/information".format(line)
             response = requests.request("GET", url, headers=headers)
             collection = response.json()
-            return collection
-
-    def images_save(self, collection):
-        for line in collection:
-            image = line["image"]
-            self.nutritions[line] = image
+            self.images[line] = {"image": collection["image"]}
 
 
 mp = MealPlan()
 mp.apikey()
-nut = MealPlan()
-nut.apikey()
-im = MealPlan()
-im.apikey()
