@@ -19,7 +19,7 @@
       <div class="column col-11">
           <header class="navbar">
               <section class="navbar-section">
-                  <a href="#" class="btn btn-link">Project history</a>
+                  <a href={{url_for("project_history")}} class="btn btn-link">Project history</a>
               </section>
               <section class="navbar-center">
                   <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
@@ -30,35 +30,57 @@
           </header>
         <div class="left">
             <div style="margin: 10px; color: navy">
-                <form action="/summary/" method="POST">
-                <div class="card">
-                <div class="card-image">
-                    {% for key, value in mealplan.items() %}
-                    {{ value[2] }}<br>
-                    <label class="form-checkbox form-inline">
-                        <input name={{key}} type="checkbox"><i class="form-icon"></i>
-                        <img src="https://spoonacular.com/recipeImages/leek_amp_cheese_pie-116679.jpg" class="img-responsive" width="200" height="200">
-                    </label>
-                    {% endfor %}
-                    <label class="form-checkbox form-inline">
-<!--                        <input name={{key}}>-->
-                    </label>
                 <div class="main-style text-center">
-                    <div class="main-style text-center">
-                        <button type="submit" class="btn btn-primary">Summary</button>
-                    </div>
-                </div>
-                </div>
-                </div>
+                      <h4><font face = "Yu Gothic">Tick at least 10 names of the meals you prefer.
+                          <p>We will prepare an eating plan for the coming week to best fit your daily calories needs.</p>
+                      </font></h4>
+                <form action="/summary/" method="POST">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Nutritions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="active">
+                                <td>{% for key, value in mealplan.items() %}
+                                    {{ value[2] }}<br>
+                                    <label class="form-checkbox form-inline">
+                                    <input name={{key}} type="checkbox"><i class="form-icon"></i>
+                                    </label>
+                                     {%endfor%}
+                                </td>
+                                <td>{% for key, value in images.items() %}
+                                    <img src="{{value}} class=img-responsive"><br>
+                                    {%endfor%}
+                                </td>
+                                <td>{% for key, value in nutritions.items() %}
+                                    {{ value }}<br>
+                                    {%endfor%}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                        <div class="main-style text-center">
+                            <div class="main-style text-center">
+                                <button type="submit" class="btn btn-primary">Summary</button>
+                            </div>
+                        </div>
                 </form>
-                <p>Progress:</p>
-                <progress class="progress" value="100" max="100"></progress>
-                <p></p>
                 </div>
-
+                </div>
+                <div class="column col-11 text-center">
+                <div style="margin: 10px">
+                    <p>Progress:</p>
+                    <progress class="progress" value="100" max="100"></progress>
+                    <p></p>
+                </div>
             </div>
-        </div>
-      </div>
+                </div>
+            </div>
+</div>
 </div>
 </body>
 </html>
