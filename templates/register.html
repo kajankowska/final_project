@@ -15,7 +15,7 @@
       <div class="column col-11">
           <header class="navbar">
               <section class="navbar-section">
-                <a href="#" class="btn btn-link">Project history</a>
+                <a href={{url_for("project_history")}} class="btn btn-link">Project history</a>
               </section>
               <section class="navbar-center">
                   <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
@@ -24,7 +24,7 @@
                   <a href={{url_for("home")}} class="btn btn-link">Home page</a>
               </section>
           </header>
-      <div>
+      <div style="color: navy">
           <h3 style="margin: 5px"><font face = "Yu Gothic"> Registration in our system will enable efficient use of the platform</font></h3>
           <div class="column col-lg-auto col-5">
               <div class="form-group"></div>
@@ -33,14 +33,13 @@
               <p></p>
           <form action="/endofreg/" method="POST">
               <label class="form-label" for="input-example-1">What's your name (login)</label>
-                  <input name="login" class="form-input" type="text" id="input-example-1" placeholder="name and surname">
+                  <input name="login" class="form-input" type="text" id="input-example-1" placeholder="name and surname" required>
                   <p></p>
-              <label class="form-label" for="input-example-2">Put your 5-character patient number (password)</label>
-                  <input name="password" class="form-input" maxlength="5" type="text" id="input-example-2" placeholder="patient no.">
+              <label class="form-label" for="input-example-2">Put your 5-digit patient number (password)</label>
+                  <input name="password" class="form-input" type="password" id="input-example-2" placeholder="patient no." pattern="[0-9]{5}" maxlength="5" required >
                   <p></p>
               <label class="form-label">Which ward you are in?</label>
-                  <select name="ward">
-                  <option>choose option</option>
+                  <select name="ward" required>
                   <option id="1">Department of Cardiac Surgery</option>
                   <option id="2">Department of Internal Medicine</option>
                   <option id="3">Department of Isotope Therapy</option>
@@ -56,8 +55,7 @@
                   </select>
                   <p></p>
               <label class="form-label">Select the color of the hospital wing in which your room is located</label>
-              <select name="wing">
-                  <option>choose option</option>
+              <select name="wing" required>
                   <option id="13">Red Wing</option>
                   <option id="14">Green Wing</option>
                   <option id="15">Blue Wing</option>
@@ -71,10 +69,12 @@
               </div>
           </form>
       </div>
-          <div style="margin: 10px">
-            <p>Progress:</p>
-            <progress class="progress" value="25" max="100"></progress>
-            <p></p>
+          <div class="column col-11 text-center">
+            <div style="margin: 10px">
+                <p>Progress:</p>
+                <progress class="progress" value="25" max="100"></progress>
+                <p></p>
+            </div>
           </div>
 </div>
 </div>
