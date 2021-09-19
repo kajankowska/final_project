@@ -15,7 +15,7 @@
       <div class="column col-11">
           <header class="navbar">
               <section class="navbar-section">
-                  <a href="#" class="btn btn-link">Project history</a>
+                  <a href={{url_for("project_history")}} class="btn btn-link">Project history</a>
               </section>
               <section class="navbar-center">
                   <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
@@ -27,11 +27,10 @@
 <div class="container">
   <div class="columns">
     <div class="column col-lg-auto col-5">
-    <div class="column">
         <form action="/generator/" method="POST">
-        <label class="form-label">1. What kind of diet you prefer?</label>
+        <div style="margin: 10px; color: navy">
+        <label class="form-label" required>1. What kind of diet you prefer?</label>
             <select name="diet type">
-            <option>choose option</option>
                 <option id="1">glutenfree</option>
                 <option id="2">FODMAP</option>
                 <option id="3">lactosefree</option>
@@ -40,9 +39,8 @@
                 <option id="6">vegetarian</option>
             </select>
             <p></p>
-        <div style="margin: 10px; color: navy">
         <div><label class="form-label">2. Put your daily caloric needs</label>
-                <input name="calories" class="form-input" type="text" id="input-example-1" placeholder="e.g. 2200">kcal
+                <input name="calories" class="form-input" type="text" id="input-example-1" placeholder="e.g. 2200" required>kcal
              <p></p>
         </div>
         <div><label class="form-label">3. Do you want to exclude any products from your diet?</label>
@@ -50,48 +48,48 @@
         </div>
              <p></p>
         <div class="form-group">
-             <label class="form-label">4. Mark how many meals per day you eat</label>
+             <label class="form-label" required>4. Mark how many meals per day you eat</label>
              <select name="meals_nr">
-             <option>choose option</option>
-                <option id="7">1</option>
+                <option id="7">3</option>
                 <option id="8">2</option>
-                <option id="9">3</option>
+                <option id="9">1</option>
              </select>
              <p></p>
         <div class="form-group">
-             <label class="form-label">5. Do you need cutlery?</label>
+             <label class="form-label" required>5. Do you need cutlery?</label>
              <select name="cutlery">
-             <option>choose option</option>
                 <option id="10">yes</option>
                 <option id="11">no</option>
              </select>
              <p></p>
         </div>
-        <div><label class="form-label">6. What kind of beverage provide with meals?</label>
+        <div><label class="form-label" required>6. What kind of beverage provide with meals?</label>
             <select name="beverage">
-                <option>choose option</option>
-                <option id="12">brewed herbs</option>
+                <option id="12">no beverage</option>
                 <option id="13">carrot juice</option>
                 <option id="14">kombucha</option>
                 <option id="15">orange juice</option>
                 <option id="16">water</option>
-                <option id="17">none</option>
+                <option id="17">brewed herbs</option>
             </select>
             <p></p>
             <p></p>
                 <button type="submit" class="btn btn-primary">Next step</button>
-            <p></p>
         </div>
         </div>
         </div>
-        </form>
+            </form>
+        </div>
+        </div>
+            <div class="column col-11 text-center">
+                <div style="margin: 10px">
+                    <p>Progress:</p>
+                    <progress class="progress" value="50" max="100"></progress>
+                    <p></p>
+                </div>
+            </div>
         </div>
     </div>
-            <p>Progress:</p>
-            <progress class="progress" value="50" max="100"></progress>
-            <p></p>
-</div>
-</div>
 </div>
 </div>
 </body>
