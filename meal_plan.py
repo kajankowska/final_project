@@ -21,7 +21,7 @@ class MealPlan:
     def get_api_data(self, calories, diet_type, exclude):
 
         exclude = exclude.replace(" ", "").title()
-        exc = "Drink,Mojito,Wine,Vodka,Cocktail,Rum,Whisky,Lemonade,Dip,Cake,Syrup," + exclude
+        exc = "Drink,Mojito,Wine,Vodka,Cocktail,Rum,Whisky,Lemonade,Dip,Cake,Syrup,Beerits" + exclude
 
         url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate"
 
@@ -81,7 +81,11 @@ class MealPlan:
             url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/{}/information".format(line)
             response = requests.request("GET", url, headers=headers)
             collection = response.json()
-            self.images[line] = {"image": collection["image"]}
+            if "image" in collection:
+                self.images[line] = {"image": collection["image"]}
+            else:
+                url = "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                self.images[line] = {"image": url}
 
 
 mp = MealPlan()
