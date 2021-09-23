@@ -22,55 +22,55 @@
                   <a href={{url_for("project_history")}} class="btn btn-link">Project history</a>
               </section>
               <section class="navbar-center">
-                  <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUEOkWIv_lJcdXWl00EikWo2xiLaNi1nHtDLf93hp-tlZ-UI3QQxEg7bNevsEGe3-cFc0&usqp=CAU" width="200" height="200">
               </section>
               <section class="navbar-section">
                   <a href={{url_for("home")}} class="btn btn-link">Home page</a>
               </section>
           </header>
+          <br><br>
         <div class="left">
             <div style="margin: 10px; color: navy">
                 <div class="main-style text-center">
-                      <h4><font face = "Yu Gothic">Tick at least 10 names of the meals you prefer.
-                          <p>We will prepare an eating plan for the coming week to best fit your daily calories needs.</p>
+                      <h4><font face = "Yu Gothic">
+                          <p></p>
+                          <p>Tick the names of the meals you prefer.<br>
+                          We will prepare an eating plan for the coming week to best fit your daily calories needs.</p>&emsp;
                       </font></h4>
                 <form action="/summary/" method="POST">
-                    <table class="table">
-                        <thead>
+                    <table class="table table-scroll" frame="void" border="3" cellpadding="9" style="width: 1550px">
                             <tr>
-                            <th>Description</th>
-                            <th>Image</th>
-                            <th>Nutritions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="active">
-                                <label class="form-checkbox form-inline">
-                                <td>{% for key, value in mealplan.items() %}
-                                    <input name={{key}} type="checkbox"><i class="form-icon"></i>
-                                    {{ value[2] }}<br>
-                                </label>
-                                     {%endfor%}
+                                <th>Description</th>
+		                        <p>{% for key, value in mealplan.items() %}</p>
+                                <td align="center"><input name={{key}} type="checkbox"><class="form-icon">&nbsp;{{ value[2] }}</class></td>
+                                <p>{%endfor%}</p>
+	                        </tr>
+                             <tr>
+                                <th>Image</th>
+		                        <p>{% for key, value in images.items() %}</p>
+                                <td align="center"><img src="{{value['image']}}" width="142" height="92"><br>
+                                <p>{%endfor%}</p>
                                 </td>
-                                <td>{% for key, value in images.items() %}
-                                    <img src="{{value['image']}}" width="142" height="92"><br>
-                                    {%endfor%}
+	                        </tr>
+                            <tr>
+                                <th>Nutritions</th>
+		                        <p>{% for key, value in nutritions.items() %}</p>
+                                <td align="center">calories: {{ value['calories'] }}<br>
+                                    carbs: {{ value['carbs'] }}<br>
+                                    fat: {{ value['fat'] }}<br>
+                                    protein: {{ value['protein'] }}<br>
+                                <p>{%endfor%}</p>
                                 </td>
-                                <td>{% for key, value in nutritions.items() %}
-                                    {{ value }}<br>
-                                    {%endfor%}
-                                </td>
-                            </tr>
-                        </tbody>
+	                        </tr>
                     </table>
                     <p></p>
                     <button type="submit" class="btn btn-primary">Summary</button>
-                </form>
+                    </form>
                 </div>
                 </div>
                 <div class="column col-11 text-center">
-                <div style="margin: 10px">
-                    <p>Progress:</p>
+                <div style="margin: 30px">
+                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Progress:</p>
                     <progress class="progress" value="100" max="100"></progress>
                     <p></p>
                 </div>
