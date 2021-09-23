@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Final</title>
+    <title>Meals summary</title>
 </head>
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
@@ -13,7 +13,7 @@
   <div class="columns">
       <div class="column col-1">
           <div style="margin: 30px, color: navy">
-              <p></p>
+            <p></p>
           </div>
       </div>
       <div class="column col-11">
@@ -22,40 +22,61 @@
                   <a href={{url_for("project_history")}} class="btn btn-link">Project history</a>
               </section>
               <section class="navbar-center">
-                  <img src="http://www.clipartbest.com/cliparts/aTe/Xao/aTeXao5qc.png">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUEOkWIv_lJcdXWl00EikWo2xiLaNi1nHtDLf93hp-tlZ-UI3QQxEg7bNevsEGe3-cFc0&usqp=CAU" width="200" height="200">
               </section>
               <section class="navbar-section">
                   <a href={{url_for("home")}} class="btn btn-link">Home page</a>
               </section>
           </header>
-          <div class="main-style text-center">
-              <div style="margin: 10px; color: navy">
-                  <div class="main-style">
-                      <h6><font face = "Yu Gothic">
-                          <p>Hi {{login}}! Thank you for the register!</p>
-                          <p>We know that you prefer a {{diet}} diet and you need to consume {{calories}} calories daily.</p>
-                          <p>According to your preference we will deliver the meals to your room
-                             which is located in {{wing}}, {{ward}}.</p>
-                          <p>You will receive {{mealsnr}} meals per day.
-                              Along with the food will be {{beverage}}.</p>
-                          {% if exc == '' %}
+          <br><br>
+        <div class="left">
+            <div style="margin: 10px; color: navy">
+                <div class="main-style text-center">
+                      <h4><font face = "Yu Gothic">
                           <p></p>
-                          {% else %}
-                          <p>We take into account that you don't like {{exc}} :)</p>
-                          {% endif %}
-                          {% if cutlery == 'yes' %}
-                          <p>We will provide cutlery.</p>
-                          {% else %}
-                          <p>We will not provide cutlery.</p>
-                          {% endif %}
-                          <p>See below for a complete list of meals.</p></font>
-                          <p>{{ selection }}</p>
-                      </h6>
-                  </div>
-                  </font>
-          </div>
-      </div>
-</div>
+                          <p>Tick the names of the meals you prefer.<br>
+                          We will prepare an eating plan for the coming week to best fit your daily calories needs.</p>&emsp;
+                      </font></h4>
+                <form action="/summary/" method="POST">
+                    <table class="table table-scroll" frame="void" border="3" cellpadding="9" style="width: 1550px">
+                            <tr>
+                                <th>Description</th>
+		                        <p>{% for key, value in mealplan.items() %}</p>
+                                <td align="center"><input name={{key}} type="checkbox"><class="form-icon">&nbsp;{{ value[2] }}</class></td>
+                                <p>{%endfor%}</p>
+	                        </tr>
+                             <tr>
+                                <th>Image</th>
+		                        <p>{% for key, value in images.items() %}</p>
+                                <td align="center"><img src="{{value['image']}}" width="142" height="92"><br>
+                                <p>{%endfor%}</p>
+                                </td>
+	                        </tr>
+                            <tr>
+                                <th>Nutritions</th>
+		                        <p>{% for key, value in nutritions.items() %}</p>
+                                <td align="center">calories: {{ value['calories'] }}<br>
+                                    carbs: {{ value['carbs'] }}<br>
+                                    fat: {{ value['fat'] }}<br>
+                                    protein: {{ value['protein'] }}<br>
+                                <p>{%endfor%}</p>
+                                </td>
+	                        </tr>
+                    </table>
+                    <p></p>
+                    <button type="submit" class="btn btn-primary">Summary</button>
+                    </form>
+                </div>
+                </div>
+                <div class="column col-11 text-center">
+                <div style="margin: 30px">
+                    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Progress:</p>
+                    <progress class="progress" value="100" max="100"></progress>
+                    <p></p>
+                </div>
+            </div>
+                </div>
+            </div>
 </div>
 </div>
 </body>
