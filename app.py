@@ -45,16 +45,13 @@ def processing():
 
 @app.route('/mealplan/')
 def result():
-    print(mp.meals)
-    print(mp.images)
-    print(mp.nutritions)
     return render_template('meal_plan.html', mealplan=mp.meals, nutritions=mp.nutritions, images=mp.images)
 
 
 @app.route('/summary/', methods=["POST", "GET"])
 def theend():
     mp.selected = dict(request.form)
-    print(mp.selected)
+    mp.selected = {int(k): v for k, v in mp.selected.items()}
     return render_template('final.html',
                            login=mp.userdata['login'],
                            ward=mp.userdata['ward'],
@@ -65,7 +62,9 @@ def theend():
                            diet=mp.options['diet type'],
                            beverage=mp.options['beverage'],
                            exc=mp.options['exc'],
-                           selection=mp.selected)
+                           selection=mp.selected,
+                           images=mp.images,
+                           meals=mp.meals)
 
 
 if __name__ == '__main__':
